@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "BudgetBuddy",
-    "slug": "BudgetBuddy",
+    "slug": "budget-buddy-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,12 @@
     "plugins": [
       "expo-sqlite",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "23c84c90-14db-4747-8873-0454219b1c75"
+      }
+    },
+    "owner": "bibinbiju"
   }
 }
