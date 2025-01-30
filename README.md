@@ -65,6 +65,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For any inquiries or support, reach out to:
-- Email: support@budgetbuddy.com
+- Email: bibinvakkom@gmail.com
 - GitHub Issues: [Issues Page](https://github.com/bibinbiju/budget-buddy-app/issues)
 
