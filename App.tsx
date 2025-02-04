@@ -7,6 +7,7 @@ import { SQLiteProvider } from "expo-sqlite";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./screens/Home";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,25 +44,30 @@ export default function App() {
       </View>
     );
   return (
-    <NavigationContainer>
-      <Suspense
-        fallback={
-          <View style={{ flex: 1 }}>
-            <ActivityIndicator size="large" />
-            <Text>Loading...</Text>
-          </View>
-        }
-      >
-        <SQLiteProvider useSuspense databaseName="mySQLiteDB.db">
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={{ headerTitle: "Budget Buddy", headerLargeTitle: true }}
-            />
-          </Stack.Navigator>
-        </SQLiteProvider>
-      </Suspense>
-    </NavigationContainer>
+    <GestureHandlerRootView>
+      <NavigationContainer>
+        <Suspense
+          fallback={
+            <View style={{ flex: 1 }}>
+              <ActivityIndicator size="large" />
+              <Text>Loading...</Text>
+            </View>
+          }
+        >
+          <SQLiteProvider useSuspense databaseName="mySQLiteDB.db">
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                  headerTitle: "Budget Buddy",
+                  headerLargeTitle: true,
+                }}
+              />
+            </Stack.Navigator>
+          </SQLiteProvider>
+        </Suspense>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
