@@ -18,18 +18,20 @@ export default function TransactionList({
           (category) => category.id === transaction.category_id
         );
         return (
-          <TouchableOpacity
+          // <TouchableOpacity
+          //   key={transaction.id}
+          //   // activeOpacity={1}
+          //   // onLongPress={() => {
+          //   //   deleteTransaction(transaction.id);
+          //   // }}
+          // >
+          <TransactionLisItem
             key={transaction.id}
-            activeOpacity={0.7}
-            onLongPress={() => {
-              deleteTransaction(transaction.id);
-            }}
-          >
-            <TransactionLisItem
-              transaction={transaction}
-              categoryInfo={categoryForCurrentItem}
-            />
-          </TouchableOpacity>
+            transaction={transaction}
+            categoryInfo={categoryForCurrentItem}
+            onDelete={deleteTransaction}
+          />
+          // </TouchableOpacity>
         );
       })}
     </View>
